@@ -7,7 +7,7 @@ const cors = require("cors");
 const { Expo } = require("expo-server-sdk");
 // Create a new Expo SDK client
 // optionally providing an access token if you have enabled push security
-let expo = new Expo({ accessToken: process.env.EXPO_ACCESS_TOKEN });
+let expo = new Expo();
 
 app.use(cors());
 app.use(express.json());
