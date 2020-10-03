@@ -6,6 +6,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "env": "^0.0.2",
+    "expo-server-sdk": "^3.6.0",
     "express": "^4.17.1",
     "superagent": "^6.1.0"
   },
