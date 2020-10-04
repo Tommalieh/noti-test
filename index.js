@@ -15,9 +15,10 @@ app.use("/", router);
 
 const PORT = process.env.PORT || 8000;
 
-async function sendNoti() {
+async function sendNoti(notiPushToken) {
+
   let messages = [];
-  let somePushTokens = ["ExponentPushToken[DV4D0JOzx48SNV_png5BxR]"];
+  let somePushTokens = [notiPushToken];
 
   for (let pushToken of somePushTokens) {
     // Each push token looks like ExponentPushToken[xxxxxxxxxxxxxxxxxxxxxx]
@@ -122,7 +123,9 @@ async function sendNoti() {
 }
 
 const pushNotification = async (req, res) => {
-  await sendNoti();
+  console.log(req.body.pushToken);
+  const pushToken = req.body.pushToken;
+  // await sendNoti(pushToken);
   res.json({ text: "hi" });
 };
 
