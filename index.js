@@ -124,8 +124,8 @@ async function sendNoti(notiPushToken) {
 
 const pushNotification = async (req, res) => {
   console.log(req.body.pushToken.data);
-  const pushToken = req.body.pushToken;
-  // await sendNoti(pushToken);
+  const pushToken = req.body.pushToken.data;
+  await sendNoti(pushToken);
   res.json({ text: "hi" });
 };
 
